@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-color: #111135;
+    --secondary-text: #565656;
+    --accent-color: #ff5080;
+    --section-bg: #f3f3f3;
+    --header-bg: rgba(0,0,0, .8);
+    --header-text: #fff;
+    --card-border: #000;
+    --footer-bg: #000;
+    --footer-text: #fff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text: #b0b0b0;
+    --section-bg: #1e1e1e;
+    --header-bg: rgba(0,0,0, .9);
+    --header-text: #fff;
+    --card-border: #444;
+    --footer-bg: #000;
+    --footer-text: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para el botón de modo */
+.modo-btn {
+    background: transparent;
+    border: none;
+    color: var(--header-text);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px;
+    transition: transform 0.3s;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.modo-btn:hover {
+    transform: scale(1.2);
+    color: var(--accent-color);
+}
+
+#inicio {
+    background: linear-gradient(135deg, rgba(25, 25, 25, 0.9), rgba(65, 25, 65, 0.9), rgba(145, 35, 85, 0.85)), url("IMG/fondo-inicio.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Partículas de fondo */
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255, 80, 128, 0.1) 1%, transparent 5%),
+        radial-gradient(circle at 85% 55%, rgba(255, 80, 128, 0.15) 1%, transparent 6%),
+        radial-gradient(circle at 35% 75%, rgba(255, 80, 128, 0.1) 1%, transparent 4%),
+        radial-gradient(circle at 65% 15%, rgba(255, 80, 128, 0.15) 1%, transparent 5%),
+        radial-gradient(circle at 50% 50%, rgba(255, 80, 128, 0.1) 1%, transparent 7%);
+    background-size: 150% 150%;
+    animation: moveBg 20s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes moveBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+#inicio .contenido header {
+    background-color: var(--header-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+
+#inicio .contenido header .contenido-header{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+#inicio .contenido header .contenido-header h1 {
+    text-align: center;
+    color: var(--accent-color);
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#inicio .contenido header .contenido-header h1 i {
+    font-size: 22px;
+}
+
+#inicio .contenido header .contenido-header nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#inicio .contenido header .contenido-header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#inicio .contenido header .contenido-header nav ul li {
+    margin: 0;
+}
+
+#inicio .contenido header .contenido-header nav ul li a {
+    text-decoration: none;
+    color: var(--header-text);
+    margin: 0 12px;
+    font-weight: 400;
+    transition: .5s;
+    display: block;
+    padding: 5px 0;
+}
+
+#inicio .contenido header .contenido-header .redes {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+#inicio .contenido header .contenido-header .redes a {
+    text-decoration: none;
+    color: var(--header-text);
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+#inicio .contenido header .contenido-header .redes a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+#inicio .contenido .presentacion {
+    max-width: 1100px;
+    height: 100vh;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inicio .contenido .presentacion .bienvenida {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+#inicio .contenido .presentacion h2{
+    font-size: 55px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#inicio .contenido .presentacion h2 span {
+    font-size: 25px;
+    color: #ff5080;
+}
+
+#inicio .contenido .presentacion .descripcion {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+#inicio .contenido .presentacion a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    background-size: 200% auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right, var(--accent-color) 0%, #ff8f9f 51%, var(--accent-color) 100%);
+    background-position: right center;
+    border: none;
+}
+
+#inicio .contenido .presentacion a:hover {
+    background-position: left center;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#icono-nav {
+    color: #fff;
+    display: none;
+}
+/* *********************/
+/* seccion sobre mi */
+/* *********************/
+
+#sobremi {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 15px;
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#sobremi .contenedor-foto {
+    max-width: 400px;
+    margin-right: 80px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+#sobremi .contenedor-foto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 80, 128, 0.1) 0%,
+        rgba(255, 80, 128, 0.05) 50%,
+        rgba(255, 80, 128, 0) 100%);
+    z-index: 1;
+}
+
+#sobremi .contenedor-foto::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    opacity: 0.3;
+    z-index: 2;
+}
+
+#sobremi .contenedor-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#sobremi .sobremi {
+    margin: 0 40px;
+}
+
+#sobremi .sobremi .titulo-seccion {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+}
+
+#sobremi .sobremi h2 {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+#sobremi .sobremi h2 span {
+    color: var(--accent-color);
+}
+
+#sobremi .sobremi h3 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#sobremi .sobremi p {
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--secondary-text);
+    margin-bottom: 12px;
+}
+
+#sobremi .sobremi a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 30px;
+    transition: all 0.4s ease;
+    font-weight: bold;
+    background-size: 200% auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to right, #f0f0f0 0%, var(--accent-color) 51%, #f0f0f0 100%);
+    background-position: right center;
+}
+
+#sobremi .sobremi a:hover {
+    background-position: left center;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptaciones para el modo oscuro */
+body.dark-mode #sobremi .sobremi a {
+    background-image: linear-gradient(to right, #2c2c2c 0%, var(--accent-color) 51%, #2c2c2c 100%);
+    color: #e0e0e0;
+}
+
+/* *********************/
+/* seccion skills */
+/* *********************/
+
+#skills {
+    max-width: 1100px;
+    padding: 0;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#skills .titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+    margin-bottom: 60px;
+}
+
+#skills .contenedor-skills {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+#skills .skill-item {
+    width: 160px;
+    height: 160px;
+    background-color: var(--section-bg);
+    border-radius: 10px;
+    margin: 0 10px 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#skills .skill-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+#skills .skill-item i {
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+#skills .skill-item p {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* *********************/
+/* seccion portfolio */
+/* *********************/
+
+#portfolio {
+    max-width: 1100px;
+    padding: 80px 15px 0;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portfolio .titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+    margin-bottom: 60px;
+}
+
+#portfolio .fila {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+#portfolio .fila .proyecto {
+    max-width: 450px;
+    border: 1px solid var(--card-border);
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#portfolio .fila .proyecto img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    object-fit: cover;
+    transition: .5s;
+}
+
+#portfolio .fila .proyecto:hover img {
+    filter: grayscale(0);
+}
+
+#portfolio .fila .proyecto .info {
+    position: absolute;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--accent-color);
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    bottom: -40px;
+    transition: .5s;
+}   
+
+#portfolio .fila .proyecto:hover .info {
+    opacity: 1;
+    bottom: 0;
+}
+/* *********************/
+/* seccion contacto */
+/* *********************/
+
+#contacto {
+    padding: 80px 15px 80px;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    min-height: calc(100vh - 70px); /* Restar altura aproximada del footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contacto .titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+    margin-bottom: 40px;
+}
+
+#contacto .contenedor-form {
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--section-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #contacto .contenedor-form {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#contacto .contenedor-form .fila {
+    margin-bottom: 15px;
+}
+
+#contacto .contenedor-form .mitad {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#contacto .contenedor-form input,
+#contacto .contenedor-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode #contacto .contenedor-form input,
+body.dark-mode #contacto .contenedor-form textarea {
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+#contacto .contenedor-form input:focus,
+#contacto .contenedor-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 80, 128, 0.3);
+}
+
+#contacto .contenedor-form .mitad input {
+    width: 100%;
+}
+
+#contacto .contenedor-form .input-full {
+    width: 100%;
+}
+
+#contacto .btn-enviar {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, var(--accent-color) 0%, #ff8f9f 51%, var(--accent-color) 100%);
+    background-position: right center;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#contacto .btn-enviar:hover {
+    background-position: left center;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* *********************/
+/* seccion del footer */
+/* *********************/
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 25px 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--footer-text);
+    display: inline-block;
+    margin: 5px;
+    font-size: 26px;
+}
+
+footer .redes a {
+    text-decoration: none;
+    color: var(--footer-text);
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+footer .redes a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+/* *********************/
+/* seccion responsiva */
+/* *********************/
+
+/* Tablets y dispositivos pequeños */
+@media screen and (max-width: 992px) {
+    #inicio .contenido .presentacion h2 {
+        font-size: 45px;
+    }
+    
+    #sobremi {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #sobremi .contenedor-foto {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    #sobremi .sobremi {
+        margin: 0;
+    }
+    
+    #skills .contenedor-skills {
+        justify-content: center;
+    }
+}
+
+/* Dispositivos móviles */
+@media screen and (max-width: 800px) {
+    .redes {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    nav.responsive {
+        display: block;
+        background-color: rgba(0, 0, 0, .8);
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+    }
+    nav.responsive ul {
+        display: block !important;
+        text-align: center;
+    }
+    nav.responsive ul li {
+        margin: 5px 0;
+    }
+    #icono-nav {
+        display: block;
+    }
+    /* Mantener el botón de modo visible en móviles */
+    .modo-btn {
+        position: absolute;
+        right: 70px;
+        font-size: 18px;
+        margin-left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #inicio .contenido .presentacion h2 {
+        font-size: 40px;
+    }
+    /* seccion sobre mi */
+    #sobremi {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+    #sobremi .contenedor-foto {
+        max-width: 200px;
+        margin: auto;
+        padding: 0;
+    }
+    #sobremi .contenedor-foto img {
+        padding: 0;
+    }
+    #sobremi .sobremi .titulo-seccion {
+        text-align: center;
+    }
+    #sobremi .sobremi h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    /* seccion skills */
+    #skills {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+    
+    #skills .skill-item {
+        width: 130px;
+        height: 130px;
+        margin: 10px;
+    }
+    
+    #skills .skill-item i {
+        font-size: 50px;
+    }
+    
+    /* seccion portafolio */
+    #portfolio {
+        padding: 60px 15px 0;
+        min-height: auto;
+    }
+    #portfolio .fila {
+        display: block;
+    }
+    #portfolio .fila .proyecto {
+        margin: 10px auto;
+    }
+    /* seccion de contacto */
+    #contacto {
+        padding: 60px 15px 60px;
+        min-height: calc(100vh - 70px);
+    }
+    
+    #contacto .contenedor-form {
+        padding: 20px;
+    }
+    
+    #contacto .contenedor-form .mitad {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #contacto .contenedor-form input,
+    #contacto .contenedor-form textarea {
+        padding: 12px;
+    }
+    
+    #inicio .contenido header .contenido-header {
+        padding: 15px 20px;
+    }
+    
+    #inicio .contenido header .contenido-header h1 {
+        font-size: 20px;
+    }
+    
+    #inicio .contenido header .contenido-header h1 i {
+        font-size: 18px;
+    }
+    
+    #icono-nav {
+        margin-left: auto;
+    }
+    
+    footer {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 480px) {
+    #inicio .contenido .presentacion h2 {
+        font-size: 30px;
+    }
+    
+    #inicio .contenido .presentacion h2 span {
+        font-size: 20px;
+    }
+    
+    #inicio .contenido .presentacion .descripcion {
+        font-size: 16px;
+    }
+    
+    #sobremi .sobremi h3 {
+        font-size: 16px;
+    }
+    
+    footer p {
+        font-size: 14px;
+    }
+    
+    #contacto .btn-enviar {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* Animación para los botones al cargar la página */
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#inicio .contenido .presentacion a,
+#sobremi .sobremi a,
+#contacto .btn-enviar {
+    animation: buttonPulse 2s infinite;
+    animation-play-state: paused;
+}
+
+#inicio .contenido .presentacion a:hover,
+#sobremi .sobremi a:hover,
+#contacto .btn-enviar:hover {
+    animation-play-state: running;
+}
+
+/* Clase común para botones dinámicos */
+.btn-dinamico {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-dinamico i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.btn-dinamico:hover i {
+    transform: translateX(3px);
+}
+
+.btn-dinamico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+.btn-dinamico:hover::before {
+    left: 100%;
+}
+
+/* Estilos específicos para los botones existentes */
+#inicio .contenido .presentacion a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    background-size: 200% auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right, var(--accent-color) 0%, #ff8f9f 51%, var(--accent-color) 100%);
+    background-position: right center;
+    border: none;
+}
+
+/* Adaptaciones para el modo oscuro */
+body.dark-mode #inicio .contenido .presentacion a,
+body.dark-mode #contacto .btn-enviar {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode #inicio .contenido .presentacion a:hover,
+body.dark-mode #contacto .btn-enviar:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#inicio .contenido header .contenido-header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Adaptaciones para el modo oscuro */
+body.dark-mode #sobremi .contenedor-foto {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #sobremi .contenedor-foto::before {
+    background: linear-gradient(135deg, 
+        rgba(255, 80, 128, 0.15) 0%,
+        rgba(255, 80, 128, 0.08) 50%,
+        rgba(255, 80, 128, 0) 100%);
+}
