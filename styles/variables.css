@@ -1,0 +1,176 @@
+:root {
+    /* Colores base */
+    --bg-color: #fff;
+    --text-color: #fff;
+    --secondary-text: #f0f0f0;
+    --accent-color: #ff5080;
+    
+    /* Gradientes y fondos */
+    --gradient-start: rgba(25, 25, 25, 0.9);
+    --gradient-middle: rgba(65, 25, 65, 0.9);
+    --gradient-end: rgba(145, 35, 85, 0.85);
+    
+    /* Elementos de interfaz */
+    --header-bg: rgba(0,0,0, .8);
+    --header-text: #fff;
+    --card-border: rgba(255, 255, 255, 0.2);
+    --footer-bg: #000;
+    --footer-text: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --overlay-color: rgba(0, 0, 0, 0.8);
+    --input-bg: #f5f5f5;
+    --input-text: #333;
+    
+    /* Efectos y partículas */
+    --particle-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text: #b0b0b0;
+    --gradient-start: rgba(15, 15, 15, 0.95);
+    --gradient-middle: rgba(45, 15, 45, 0.95);
+    --gradient-end: rgba(125, 25, 65, 0.9);
+    --header-bg: rgba(0,0,0, .9);
+    --card-border: #444;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --overlay-color: rgba(0, 0, 0, 0.9);
+    --input-bg: #2d2d2d;
+    --input-text: #e0e0e0;
+    --particle-color: rgba(255, 80, 128, 0.2);
+}
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Fondo común */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        var(--gradient-start),
+        var(--gradient-middle),
+        var(--gradient-end)
+    ), url("../IMG/fondo-inicio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transition: background 0.3s ease;
+}
+
+/* Efecto de partículas estático */
+.background-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, var(--particle-color) 1%, transparent 5%),
+        radial-gradient(circle at 85% 55%, var(--particle-color) 1%, transparent 6%),
+        radial-gradient(circle at 35% 75%, var(--particle-color) 1%, transparent 4%),
+        radial-gradient(circle at 65% 15%, var(--particle-color) 1%, transparent 5%),
+        radial-gradient(circle at 50% 50%, var(--particle-color) 1%, transparent 7%);
+    background-size: 150% 150%;
+    animation: moveBg 20s infinite alternate;
+    z-index: -1;
+}
+
+/* Secciones */
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 0;
+    z-index: 1;
+}
+
+/* Contenedor común */
+.contenido-seccion {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Animaciones */
+@keyframes moveBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Partículas flotantes */
+.floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: var(--particle-color);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 20s linear infinite;
+}
+
+/* Adaptación para modo oscuro */
+body.dark-mode .particle {
+    background: var(--particle-color-dark);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Ajustes específicos para cada sección */
+#sobremi .floating-particles,
+#skills .floating-particles,
+#portfolio .floating-particles,
+#contacto .floating-particles {
+    z-index: 1;
+} 

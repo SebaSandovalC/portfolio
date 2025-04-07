@@ -1,0 +1,164 @@
+/* Estilos generales para títulos de sección */
+.titulo-seccion {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Estilo específico para la sección Inicio */
+#inicio .presentacion h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 700;
+    position: relative;
+    line-height: 1.2;
+}
+
+#inicio .presentacion h2 span {
+    position: relative;
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* Estilo específico para la sección Sobre Mi */
+#sobremi h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#sobremi h2 span {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+#sobremi h2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+#sobremi h2:hover::after {
+    transform: scaleX(1);
+}
+
+/* Estilo específico para la sección Skills */
+#skills .titulo-seccion {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#skills .titulo-seccion::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo específico para la sección Portfolio */
+#portfolio .titulo-seccion {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#portfolio .titulo-seccion::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo específico para la sección Contacto */
+#contacto .titulo-seccion {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    letter-spacing: 2px;
+}
+
+#contacto .titulo-seccion::before,
+#contacto .titulo-seccion::after {
+    content: '✉';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#contacto .titulo-seccion::before {
+    left: 0;
+}
+
+#contacto .titulo-seccion::after {
+    right: 0;
+}
+
+#contacto .titulo-seccion:hover::before {
+    left: -20px;
+    opacity: 1;
+}
+
+#contacto .titulo-seccion:hover::after {
+    right: -20px;
+    opacity: 1;
+}
+
+/* Adaptaciones para modo oscuro */
+body.dark-mode .titulo-seccion {
+    color: var(--text-color);
+}
+
+body.dark-mode #inicio .presentacion h2 {
+    color: var(--text-color);
+}
+
+body.dark-mode #inicio .presentacion h2 span {
+    color: var(--accent-color);
+}
+
+body.dark-mode #sobremi h2 {
+    color: var(--text-color);
+}
+
+body.dark-mode #sobremi h2 span {
+    color: var(--accent-color);
+} 

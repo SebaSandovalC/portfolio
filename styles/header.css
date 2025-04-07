@@ -1,0 +1,479 @@
+#inicio {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end)), url("IMG/fondo-inicio.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Partículas de fondo mejoradas */
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, var(--particle-color) 1%, transparent 5%),
+        radial-gradient(circle at 85% 55%, var(--particle-color) 1%, transparent 6%),
+        radial-gradient(circle at 35% 75%, var(--particle-color) 1%, transparent 4%),
+        radial-gradient(circle at 65% 15%, var(--particle-color) 1%, transparent 5%),
+        radial-gradient(circle at 50% 50%, var(--particle-color) 1%, transparent 7%);
+    background-size: 150% 150%;
+    animation: moveBg 20s infinite alternate;
+    pointer-events: none;
+}
+
+/* Efecto de brillo flotante */
+#inicio::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: rotateGlow 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+header {
+    background-color: var(--header-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+header .contenido-header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+}
+
+header .contenido-header .logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header .contenido-header h1 {
+    text-align: center;
+    color: var(--header-text);
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Space Grotesk', monospace;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    text-shadow: 0 0 10px rgba(255, 80, 128, 0.1);
+}
+
+/* Efecto de brillo en el logo */
+header .contenido-header h1::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--accent-color) 0%, 
+        transparent 50%,
+        var(--accent-color) 100%
+    );
+    z-index: -1;
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto de línea animada debajo del logo */
+header .contenido-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--accent-color) 50%,
+        transparent 100%
+    );
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* Animación al hacer hover */
+header .contenido-header .logo-link:hover h1 {
+    color: var(--accent-color);
+    transform: scale(1.1);
+    text-shadow: 0 0 15px var(--accent-color);
+}
+
+header .contenido-header .logo-link:hover h1::before {
+    opacity: 0.5;
+    animation: rotateBg 2s linear infinite;
+}
+
+header .contenido-header .logo-link:hover h1::after {
+    transform: scaleX(1);
+    animation: shimmer 2s infinite;
+}
+
+/* Keyframes para las animaciones */
+@keyframes rotateBg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+header .contenido-header h1 i {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+header .contenido-header h1:hover i {
+    transform: rotate(15deg);
+}
+
+header .contenido-header nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+header .contenido-header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+header .contenido-header nav ul li {
+    margin: 0;
+}
+
+header .contenido-header nav ul li a {
+    text-decoration: none;
+    color: var(--header-text);
+    margin: 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+header .contenido-header nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header .contenido-header nav ul li a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+header .contenido-header nav ul li a:hover::before {
+    width: 100%;
+}
+
+header .contenido-header nav ul li a.seleccionado {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+header .contenido-header nav ul li a.seleccionado::before {
+    width: 100%;
+}
+
+header .contenido-header .redes {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    gap: 15px;
+}
+
+header .contenido-header .redes a {
+    text-decoration: none;
+    color: var(--header-text);
+    display: inline-block;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header .contenido-header .redes a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+header .contenido-header .redes a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+header .contenido-header .redes a:hover::after {
+    width: 100%;
+}
+
+/* Estilos para el botón de modo en el header */
+header .contenido-header .modo-btn {
+    background: transparent;
+    border: none;
+    color: var(--header-text);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+header .contenido-header .modo-btn:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: var(--accent-color);
+}
+
+/* Estilos para el icono del menú responsive */
+#icono-nav {
+    color: var(--header-text);
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#icono-nav:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+#inicio .contenido .presentacion {
+    max-width: 1100px;
+    height: 100vh;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+#inicio .contenido .presentacion .bienvenida {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#inicio .contenido .presentacion h2 {
+    font-size: 55px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+#inicio .contenido .presentacion h2 span {
+    font-size: 25px;
+    color: #ff5080;
+    display: inline-block;
+    position: relative;
+}
+
+#inicio .contenido .presentacion h2 span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff5080;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+#inicio .contenido .presentacion h2:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#inicio .contenido .presentacion .descripcion {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.6s;
+}
+
+#inicio .contenido .presentacion a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    background-size: 200% auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right, #ff5080 0%, #ff8f9f 51%, #ff5080 100%);
+    background-position: right center;
+    border: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.9s;
+    position: relative;
+    overflow: hidden;
+}
+
+#inicio .contenido .presentacion a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+#inicio .contenido .presentacion a:hover::before {
+    left: 100%;
+}
+
+#inicio .contenido .presentacion a:hover {
+    background-position: left center;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de partículas flotantes */
+#inicio .floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Asegurar que los colores se mantengan en modo oscuro */
+body.dark-mode #inicio .contenido .presentacion .bienvenida,
+body.dark-mode #inicio .contenido .presentacion h2,
+body.dark-mode #inicio .contenido .presentacion .descripcion {
+    color: #fff;
+}
+
+body.dark-mode #inicio .contenido .presentacion h2 span {
+    color: #ff5080;
+}
+
+body.dark-mode #inicio .contenido .presentacion a {
+    color: #fff;
+    background-image: linear-gradient(to right, #ff5080 0%, #ff8f9f 51%, #ff5080 100%);
+} 

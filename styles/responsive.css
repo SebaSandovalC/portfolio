@@ -1,0 +1,195 @@
+/* Tablets y dispositivos pequeños */
+@media screen and (max-width: 992px) {
+    #inicio .contenido .presentacion h2 {
+        font-size: 45px;
+    }
+    
+    #sobremi {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 15px;
+    }
+    
+    #sobremi .contenedor-foto {
+        margin-right: 0;
+        margin-bottom: 30px;
+        max-width: 300px;
+        transform: none;
+    }
+    
+    #sobremi .contenedor-foto:hover {
+        transform: none;
+    }
+    
+    #sobremi .sobremi {
+        margin: 0;
+    }
+    
+    #sobremi .sobremi h2::after {
+        left: 25%;
+        width: 50%;
+    }
+    
+    #skills .contenedor-skills {
+        justify-content: center;
+    }
+}
+
+/* Dispositivos móviles */
+@media screen and (max-width: 800px) {
+    .redes {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    nav.responsive {
+        display: block;
+        background-color: rgba(0, 0, 0, .8);
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+    }
+    nav.responsive ul {
+        display: block !important;
+        text-align: center;
+    }
+    nav.responsive ul li {
+        margin: 5px 0;
+    }
+    #icono-nav {
+        display: block;
+    }
+    /* Mantener el botón de modo visible en móviles */
+    .modo-btn {
+        position: absolute;
+        right: 70px;
+        font-size: 18px;
+        margin-left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #inicio .contenido .presentacion h2 {
+        font-size: 40px;
+    }
+    /* seccion sobre mi */
+    #sobremi {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+    #sobremi .contenedor-foto {
+        max-width: 200px;
+        margin: auto;
+        padding: 0;
+    }
+    #sobremi .contenedor-foto img {
+        padding: 0;
+    }
+    #sobremi .sobremi .titulo-seccion {
+        text-align: center;
+    }
+    #sobremi .sobremi h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    /* seccion skills */
+    #skills {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+    
+    #skills .skill-item {
+        width: 130px;
+        height: 130px;
+        margin: 10px;
+    }
+    
+    #skills .skill-item i {
+        font-size: 50px;
+    }
+    
+    /* seccion portafolio */
+    #portfolio {
+        padding: 60px 15px 0;
+        min-height: auto;
+    }
+    #portfolio .fila {
+        display: block;
+    }
+    #portfolio .fila .proyecto {
+        margin: 10px auto;
+    }
+    /* seccion de contacto */
+    #contacto {
+        padding: 60px 15px 60px;
+        min-height: calc(100vh - 70px);
+    }
+    
+    #contacto .contenedor-form {
+        padding: 20px;
+    }
+    
+    #contacto .contenedor-form .mitad {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #contacto .contenedor-form input,
+    #contacto .contenedor-form textarea {
+        padding: 12px;
+    }
+    
+    #inicio .contenido header .contenido-header {
+        padding: 15px 20px;
+    }
+    
+    #inicio .contenido header .contenido-header h1 {
+        font-size: 20px;
+    }
+    
+    #inicio .contenido header .contenido-header h1 i {
+        font-size: 18px;
+    }
+    
+    #icono-nav {
+        margin-left: auto;
+    }
+    
+    footer {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+/* Dispositivos muy pequeños */
+@media screen and (max-width: 480px) {
+    #inicio .contenido .presentacion h2 {
+        font-size: 30px;
+    }
+    
+    #inicio .contenido .presentacion h2 span {
+        font-size: 20px;
+    }
+    
+    #inicio .contenido .presentacion .descripcion {
+        font-size: 16px;
+    }
+    
+    #sobremi .sobremi h3 {
+        font-size: 16px;
+    }
+    
+    footer p {
+        font-size: 14px;
+    }
+    
+    #contacto .btn-enviar {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+} 

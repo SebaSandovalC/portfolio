@@ -1,0 +1,61 @@
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+footer .redes {
+    margin-bottom: 20px;
+}
+
+footer .redes a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    color: var(--footer-text);
+    transition: all 0.3s ease;
+}
+
+footer .redes a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer .redes a i {
+    font-size: 20px;
+}
+
+footer .copyright {
+    font-size: 14px;
+    color: var(--footer-text);
+    opacity: 0.8;
+}
+
+footer .copyright span {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Animación para los iconos de redes sociales */
+@keyframes iconFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+footer .redes a {
+    animation: iconFloat 3s infinite;
+    animation-play-state: paused;
+}
+
+footer .redes a:hover {
+    animation-play-state: running;
+} 

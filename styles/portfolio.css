@@ -1,0 +1,114 @@
+#portfolio {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#portfolio .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#portfolio .fila {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#portfolio .fila .col {
+    width: 48%;
+    position: relative;
+}
+
+#portfolio .fila .col h3 {
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+#portfolio .fila .col .proyecto {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+#portfolio .fila .col .proyecto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+#portfolio .fila .col .proyecto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+#portfolio .fila .col .proyecto:hover img {
+    transform: scale(1.05);
+}
+
+#portfolio .fila .col .proyecto .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, var(--overlay-color), transparent);
+    color: #fff;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+#portfolio .fila .col .proyecto:hover .info {
+    transform: translateY(0);
+}
+
+#portfolio .fila .col .proyecto .info h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+#portfolio .fila .col .proyecto .info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+#portfolio .fila .col .proyecto .info .tecnologias {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#portfolio .fila .col .proyecto .info .tecnologias span {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Adaptación para modo oscuro */
+body.dark-mode #portfolio .fila .col h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode #portfolio .fila .col .proyecto {
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+body.dark-mode #portfolio .fila .col .proyecto:hover {
+    box-shadow: 0 10px 20px var(--shadow-color);
+} 

@@ -3,213 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fuentes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SS Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    
+    <!-- Variables y estilos base -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Componentes -->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/titles.css">
+    
+    <!-- Secciones -->
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    
+    <!-- Responsive al final -->
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-  <!-- SECCION INICIO -->
-  <section id="inicio">
-    <div class="contenido">
-      <header>
+    <!-- Fondo común para todas las secciones -->
+    <div class="background-overlay"></div>
+
+    <!-- Header -->
+    <header>
         <div class="contenido-header">
-            <h1><i class="fa-solid fa-code"></i></h1>
-            <nav id="nav" class="">
+            <a href="#inicio" class="logo-link">
+                <h1><i class="fa-solid fa-code"></i></h1>
+            </a>
+            <nav id="nav">
                 <ul id="links">
-                    <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                    <li><a href="#inicio" onclick="seleccionar(this)">INICIO</a></li>
                     <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
                     <li><a href="#skills" onclick="seleccionar(this)">SKILLS</a></li>
                     <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
                     <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
                 </ul>
             </nav>
-
-            <!-- ICONO DEL MENU RESPONSIVO -->
-            <div id="icono-nav" onclick="responsiveMenu()">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <!-- ICONO PARA REDES SOCIALES -->
             <div class="redes">
-              <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a>
-              <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
             </div>
-            
-            <!-- BOTÓN MODO CLARO/OSCURO -->
-            <button id="modoBtn" class="modo-btn" onclick="cambiarModo()">
-              <i class="fa-solid fa-moon"></i>
+            <button class="modo-btn" id="modoBtn" onclick="cambiarModo()">
+                <i class="fa-solid fa-moon"></i>
             </button>
-        </div>      
-      </header>
-      <div class="presentacion">
-        <p class="bienvenida">Bienvenidos</p>
-        <h2>SOY <span>SEBASTIÁN SANDOVAL</span>, DESARROLLADOR FULL STACK JAVA TRAINEE | ESPECIALISTA TI</h2>
-        <p class="descripcion">Profesional con experiencia destacada en Tecnologías de la Información (TI).</p>
-        <a href="#portfolio" class="btn-dinamico"><i class="fa-solid fa-briefcase"></i> Ir a Portafolio</a>
-      </div>
-    </div>
-  </section>
+            <div id="icono-nav" onclick="responsiveMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio">
+        <div class="contenido">
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>SOY <span>SEBASTIÁN SANDOVAL</span>, DESARROLLADOR FULL STACK JAVA TRAINEE | ESPECIALISTA TI</h2>
+                <p class="descripcion">Profesional con experiencia destacada en Tecnologías de la Información (TI).</p>
+                <a href="#portfolio" class="btn-dinamico"><i class="fa-solid fa-briefcase"></i> Ir a Portafolio</a>
+            </div>
+        </div>
+    </section>
   
-  <!-- SECCION SOBRE MI -->
-  <section id="sobremi">
-    <div class="contenedor-foto">
-        <img src="IMG/yo.png" alt="Fotografía de Sebastián Sandoval">
-    </div>
-    <div class="sobremi">
-        <p class="titulo-seccion">Sobre Mi</p>
-        <h2>Hola, Soy <span>Sebastián Sandoval</span></h2>
-        <h3>DESARROLLADOR FULL STACK JAVA TRAINEE | Especialista TI</h3>
-        <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
-        <p><strong>Para más información, haz click en Curriculum Vitae.</strong></p>
-        <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
-    </div>
-</section>
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="IMG/seba.webp" alt="Fotografía de Sebastián Sandoval">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Sobre Mi</p>
+            <h2>Hola, Soy <span>Sebastián Sandoval</span></h2>
+            <h3>DESARROLLADOR FULL STACK JAVA TRAINEE | Especialista TI</h3>
+            <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
+            <p><strong>Para más información, haz click en Curriculum Vitae.</strong></p>
+            <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
+        </div>
+    </section>
 
-<!-- SECCION STACKS TECNOLÓGICOS -->
-<section id="skills">
-    <h3 class="titulo-seccion">Skills</h3>
-    <div class="contenedor-skills">
-        <div class="skill-item">
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML</p>
+    <!-- SECCION STACKS TECNOLÓGICOS -->
+    <section id="skills">
+        <h3 class="titulo-seccion">Skills</h3>
+        <div class="contenedor-skills">
+            <div class="skill-item">
+                <i class="fa-brands fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-java"></i>
+                <p>Java</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-leaf"></i>
+                <p>Spring Boot</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-database"></i>
+                <p>MySQL</p>
+            </div>
         </div>
-        <div class="skill-item">
-            <i class="fa-brands fa-css3-alt"></i>
-            <p>CSS</p>
-        </div>
-        <div class="skill-item">
-            <i class="fa-brands fa-js"></i>
-            <p>JavaScript</p>
-        </div>
-        <div class="skill-item">
-            <i class="fa-brands fa-java"></i>
-            <p>Java</p>
-        </div>
-        <div class="skill-item">
-            <i class="fa-solid fa-leaf"></i>
-            <p>Spring Boot</p>
-        </div>
-        <div class="skill-item">
-            <i class="fa-solid fa-database"></i>
-            <p>MySQL</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- SECCION PORTAFOLIO -->
-<section id="portfolio">
-    <h3 class="titulo-seccion">Proyectos Personales</h3>
-    <div class="fila">
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto1.jpg" alt="Proyecto 1 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
+    <!-- SECCION PORTAFOLIO -->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Proyectos Personales</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="IMG/proyectoikki.webp" alt="Proyecto Ikki">
+                <div class="info">
+                    <h4>IKKITOUCH - ILUSTRADOR</h4>
+                    <p>Desarrollo Web</p>
+                    <div class="tecnologias">
+                        <div class="tecnologia">
+                            <i class="fa-brands fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tecnologia">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tecnologia">
+                            <i class="fa-brands fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto2.jpg" alt="Proyecto 2 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto3.jpg" alt="Proyecto 3 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-    </div>
-    <div class="fila">
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto4.jpg" alt="Proyecto 4 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto5.jpg" alt="Proyecto 5 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto6.jpg" alt="Proyecto 6 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-    </div>
-    <div class="fila">
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto7.jpg" alt="Proyecto 7 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto8.jpg" alt="Proyecto 8 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-        <div class="proyecto">
-            <div class="overlay"></div>
-            <img src="img/proyecto9.jpg" alt="Proyecto 9 de diseño web">
-            <div class="info">
-                <h4>Descripcion Proyecto</h4>
-                <p>Diseño Web</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- SECCION DE CONTACTO -->
-<section id="contacto">
-    <h3 class="titulo-seccion">Conectemos</h3>
-    <div class="contenedor-form">
-        <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
-            <div class="fila mitad">
-                <input type="text" placeholder="Nombre" class="input-mitad" name="nombre" required>
-                <input type="email" placeholder="Email" class="input-mitad" name="email" required>
-            </div>
-            <div class="fila">
-                <input type="text" placeholder="Asunto" class="input-full" name="tema">
-            </div>
-            <div class="fila">
-                <textarea name="mensaje" id="mensaje" cols="30" rows="7" placeholder="Tu mensaje..." class="input-full" required></textarea>
-            </div>
+    <!-- SECCION DE CONTACTO -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Conectemos</h3>
+        <div class="contenedor-form">
+            <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Nombre" class="input-mitad" name="nombre" required>
+                    <input type="email" placeholder="Email" class="input-mitad" name="email" required>
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Asunto" class="input-full" name="tema">
+                </div>
+                <div class="fila">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="7" placeholder="Tu mensaje..." class="input-full" required></textarea>
+                </div>
 
-            <button type="submit" class="btn-enviar btn-dinamico"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
-        </form>
-    </div>
-</section>
+                <button type="submit" class="btn-enviar btn-dinamico"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+            </form>
+        </div>
+    </section>
 
-<!-- SECCION FOOTER -->
-<footer>
-    <p>Todos los derechos reservados - 2025.</p>
-    <div class="redes">
-        <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a>
-        <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>
-    </div>
-</footer>
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - 2025.</p>
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/sebastian-sandoval-vargas/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/SebastianSandovalVargas" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
