@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Contacto - Sebastián Sandoval</title>
+    
+    <!-- Variables y estilos base -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Componentes -->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/titles.css">
+    
+    <!-- Secciones -->
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    
+    <!-- Responsive al final -->
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Fondo común para todas las secciones -->
+    <div class="background-overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="contenido-header">
+            <a href="index.html" class="logo-link">
+                <h1><i class="fa-solid fa-code"></i></h1>
+            </a>
+            <nav id="nav">
+                <ul id="links">
+                    <li><a href="index.html" onclick="seleccionar(this)">INICIO</a></li>
+                    <li><a href="index.html#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                    <li><a href="index.html#skills" onclick="seleccionar(this)">SKILLS</a></li>
+                    <li><a href="index.html#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
+                    <li><a href="contact.html" onclick="seleccionar(this)" class="seleccionado">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="redes">
+                <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <button class="modo-btn" id="modoBtn" onclick="cambiarModo()">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div id="icono-nav" onclick="responsiveMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Conectemos</h2>
+            <div class="contenedor-form">
+                <form action="https://formspree.io/f/xjvnqjqg" method="POST">
+                    <div class="fila mitad">
+                        <input type="text" placeholder="Nombre" class="input-mitad" name="nombre" required>
+                        <input type="email" placeholder="Email" class="input-mitad" name="email" required>
+                    </div>
+                    <div class="fila">
+                        <input type="text" placeholder="Asunto" class="input-full" name="asunto" required>
+                    </div>
+                    <div class="fila">
+                        <textarea name="mensaje" id="" cols="30" rows="7" placeholder="Tu Mensaje" class="input-full" required></textarea>
+                    </div>
+                    <input type="submit" value="Enviar" class="btn-enviar">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>Todos los derechos reservados - 2025.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

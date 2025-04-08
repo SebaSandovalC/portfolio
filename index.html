@@ -39,17 +39,17 @@
                 <h1><i class="fa-solid fa-code"></i></h1>
             </a>
             <nav id="nav">
-                <ul id="links">
-                    <li><a href="#inicio" onclick="seleccionar(this)">INICIO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
-                    <li><a href="#skills" onclick="seleccionar(this)">SKILLS</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
-                    <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                <ul>
+                    <li><a href="#inicio" class="seleccionado">INICIO</a></li>
+                    <li><a href="#sobremi">SOBRE MÍ</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="contact.html">CONTACTO</a></li>
                 </ul>
             </nav>
             <div class="redes">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
             <button class="modo-btn" id="modoBtn" onclick="cambiarModo()">
                 <i class="fa-solid fa-moon"></i>
@@ -74,16 +74,22 @@
   
     <!-- SECCION SOBRE MI -->
     <section id="sobremi">
-        <div class="contenedor-foto">
-            <img src="IMG/seba.webp" alt="Fotografía de Sebastián Sandoval">
-        </div>
-        <div class="sobremi">
-            <p class="titulo-seccion">Sobre Mi</p>
-            <h2>Hola, Soy <span>Sebastián Sandoval</span></h2>
-            <h3>DESARROLLADOR FULL STACK JAVA TRAINEE | Especialista TI</h3>
-            <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
-            <p><strong>Para más información, haz click en Curriculum Vitae.</strong></p>
-            <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">SOBRE MI</h2>
+            <div class="fila">
+                <div class="col">
+                    <div class="contenedor-foto">
+                        <img src="IMG/seba.webp" alt="Fotografía de Sebastián Sandoval">
+                    </div>
+                </div>
+                <div class="col">
+                    <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
+                    <br>
+                    <p>Para más información, haz click en Curriculum Vitae.</p>
+                </br>
+                    <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -147,34 +153,13 @@
         </div>
     </section>
 
-    <!-- SECCION DE CONTACTO -->
-    <section id="contacto">
-        <h3 class="titulo-seccion">Conectemos</h3>
-        <div class="contenedor-form">
-            <form action="https://formspree.io/f/tu-id-de-formspree" method="POST">
-                <div class="fila mitad">
-                    <input type="text" placeholder="Nombre" class="input-mitad" name="nombre" required>
-                    <input type="email" placeholder="Email" class="input-mitad" name="email" required>
-                </div>
-                <div class="fila">
-                    <input type="text" placeholder="Asunto" class="input-full" name="tema">
-                </div>
-                <div class="fila">
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="7" placeholder="Tu mensaje..." class="input-full" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-enviar btn-dinamico"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- SECCION FOOTER -->
+    <!-- Footer -->
     <footer>
-        <p>Todos los derechos reservados - 2025.</p>
         <div class="redes">
-            <a href="https://www.linkedin.com/in/sebastian-sandoval-vargas/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/SebastianSandovalVargas" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
+        <p>Todos los derechos reservados - 2025.</p>
     </footer>
 
     <script src="script.js"></script>
