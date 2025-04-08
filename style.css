@@ -20,23 +20,20 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     position: relative;
+    /* Activar el modo oscuro por defecto */
+    background-color: #0a0a0a;
+    color: #ffffff;
 }
 
 /* Estilos del header */
 header {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
     z-index: 100;
     top: 0;
     left: 0;
     backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Modo oscuro */
-body.dark-mode header {
-    background-color: rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -48,27 +45,6 @@ body.dark-mode header {
     align-items: center;
     padding: 10px 20px;
     position: relative;
-}
-
-/* Estilos para el botón de modo */
-.modo-btn {
-    background: transparent;
-    border: none;
-    color: var(--header-text);
-    cursor: pointer;
-    font-size: 20px;
-    padding: 8px;
-    transition: transform 0.3s;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.modo-btn:hover {
-    transform: scale(1.2);
-    color: var(--accent-color);
 }
 
 /* Navegación */
@@ -104,7 +80,7 @@ nav ul li a {
 .redes {
     display: flex;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .redes a {
@@ -739,15 +715,7 @@ footer .redes a:hover {
     #icono-nav {
         display: block;
     }
-    /* Mantener el botón de modo visible en móviles */
-    .modo-btn {
-        position: absolute;
-        right: 70px;
-        font-size: 18px;
-        margin-left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+    
     #inicio .contenido .presentacion h2 {
         font-size: 40px;
         letter-spacing: 3px;

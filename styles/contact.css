@@ -1,17 +1,18 @@
 #contacto {
     width: 100%;
+    padding: 100px 0 50px;
 }
 
 #contacto .contenido-seccion {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 0 20px;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 #contacto .fila {
@@ -86,86 +87,248 @@ body.dark-mode #contacto .fila .col button {
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
-#contacto .titulo-seccion {
-    text-align: center;
-    font-size: 22px;
+/* Estilos mejorados y con mayor especificidad para el título de contacto */
+body #contacto .contenido-seccion #titulo-contacto {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
     text-transform: uppercase;
-    color: var(--text-color);
-    text-decoration: underline;
-    text-decoration-color: var(--accent-color);
-    text-decoration-thickness: 3px;
+    letter-spacing: 6px;
     margin-bottom: 40px;
-}
-
-#contacto .contenedor-form {
-    max-width: 800px;
-    margin: auto;
-    background-color: var(--section-bg);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: none;
+    z-index: 5;
 }
 
-#contacto .contenedor-form .fila {
+#titulo-contacto::before {
+    display: none;
+}
+
+#titulo-contacto::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--accent-color),
+        #ff8ab3,
+        transparent);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: tituloContactoPulse 2s ease-in-out infinite;
+}
+
+@keyframes tituloContactoPulse {
+    0%, 100% {
+        width: 50px;
+        opacity: 1;
+    }
+    50% {
+        width: 100px;
+        opacity: 0.5;
+    }
+}
+
+#titulo-contacto:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
+                 0 0 25px rgba(255, 255, 255, 0.3),
+                 0 0 35px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilos mejorados para el contenedor del formulario */
+#contacto .contenedor-form {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(15, 15, 30, 0.9);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en el contenedor */
+#contacto .contenedor-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 80, 128, 0.1), transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#contacto .contenedor-form:hover::before {
+    opacity: 0.5;
+}
+
+/* Título del formulario */
+#contacto .contenedor-form h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.7rem;
+    color: #ffffff;
     margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#contacto .contenedor-form .mensaje-intro {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Filas del formulario */
+#contacto .contenedor-form .fila {
+    margin-bottom: 22px;
+    position: relative;
 }
 
 #contacto .contenedor-form .mitad {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 20px;
 }
 
+/* Estilos para los campos de entrada */
 #contacto .contenedor-form input,
 #contacto .contenedor-form textarea {
-    padding: 15px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--input-bg);
-    color: var(--input-text);
-    font-size: 14px;
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(10, 10, 20, 0.5);
+    color: #ffffff;
+    font-size: 15px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
 }
 
 #contacto .contenedor-form input:focus,
 #contacto .contenedor-form textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 80, 128, 0.25);
+    transform: translateY(-2px);
+    background: rgba(25, 25, 35, 0.6);
 }
 
-#contacto .contenedor-form .mitad input {
-    width: 100%;
+/* Efecto de flotación para las etiquetas */
+#contacto .contenedor-form .campo {
+    position: relative;
+    margin-bottom: 0;
 }
 
-#contacto .contenedor-form .input-full {
-    width: 100%;
+#contacto .contenedor-form .campo label {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
+#contacto .contenedor-form .campo input:focus + label,
+#contacto .contenedor-form .campo textarea:focus + label,
+#contacto .contenedor-form .campo input:not(:placeholder-shown) + label,
+#contacto .contenedor-form .campo textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 15px;
+    font-size: 12px;
+    color: #ff7ba9;
+    font-weight: 500;
+    opacity: 1;
+    background: rgba(20, 20, 35, 0.95);
+    border-radius: 4px;
+    padding: 1px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el botón */
 #contacto .btn-enviar {
     display: block;
     width: fit-content;
     margin: 25px auto 5px;
     cursor: pointer;
     transition: all 0.4s ease;
-    padding: 12px 30px;
+    padding: 12px 36px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     background-size: 200% auto;
-    background-image: linear-gradient(to right, var(--accent-color) 0%, #ff8f9f 51%, var(--accent-color) 100%);
+    background-image: linear-gradient(to right, #ff5080 0%, #ff8f9f 51%, #ff5080 100%);
     background-position: right center;
-    color: var(--header-text);
-    box-shadow: 0 5px 15px var(--shadow-color);
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #contacto .btn-enviar:hover {
     background-position: left center;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px var(--shadow-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    #contacto {
+        padding: 90px 0 40px;
+    }
+    
+    body #contacto .contenido-seccion #titulo-contacto {
+        font-size: 28px;
+        letter-spacing: 4px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    #contacto .contenedor-form {
+        padding: 30px 20px;
+    }
+    
+    #contacto .contenedor-form .mitad {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    #contacto .contenedor-form h3 {
+        font-size: 1.5rem;
+    }
+    
+    #contacto .btn-enviar {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
 }
 
 /* Animación para el botón de enviar */
@@ -182,4 +345,102 @@ body.dark-mode #contacto .fila .col button {
 
 #contacto .btn-enviar:hover {
     animation-play-state: running;
+}
+
+/* Animación para la línea debajo del título */
+@keyframes pulseLine {
+    0%, 100% {
+        width: 50px;
+        opacity: 1;
+    }
+    50% {
+        width: 100px;
+        opacity: 0.5;
+    }
+}
+
+/* Estilo específico para el título animado */
+.titulo-animado::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 50px !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--accent-color),
+        #ff8ab3,
+        transparent) !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    animation: pulseLineContact 2s ease-in-out infinite !important;
+    top: auto !important;
+    right: auto !important;
+    opacity: 1 !important;
+}
+
+/* Animación específica para el título de contacto */
+@keyframes pulseLineContact {
+    0%, 100% {
+        width: 50px;
+        opacity: 1;
+    }
+    50% {
+        width: 100px;
+        opacity: 0.5;
+    }
+}
+
+/* Regla con mayor especificidad para forzar la animación */
+body #contacto .contenido-seccion h2.titulo-seccion.titulo-animado::after {
+    animation: pulseLineContact 2s ease-in-out infinite !important;
+    width: 50px !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+#contacto .contenedor-form textarea {
+    resize: none;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+/* Personalización específica para textarea */
+#contacto .contenedor-form .campo textarea:focus,
+#contacto .contenedor-form .campo textarea:not(:placeholder-shown) {
+    padding-top: 18px;
+}
+
+#contacto .contenedor-form .campo textarea:focus + label,
+#contacto .contenedor-form .campo textarea:not(:placeholder-shown) + label {
+    transform: translateY(-24px);
+}
+
+/* Animación para el botón de enviar */
+#contacto .btn-enviar {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+#contacto .btn-enviar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+}
+
+#contacto .btn-enviar:hover::after {
+    animation: shine 1.5s;
+}
+
+@keyframes shine {
+    100% {
+        transform: translateX(100%);
+    }
 } 

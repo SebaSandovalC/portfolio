@@ -1,9 +1,69 @@
 /* Estilos generales para títulos de sección */
 .titulo-seccion {
-    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
     text-transform: uppercase;
+    letter-spacing: 6px;
     margin-bottom: 40px;
     position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--accent-color),
+        #ff8ab3,
+        transparent);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulseLine 2s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+    0%, 100% {
+        width: 50px;
+        opacity: 1;
+    }
+    50% {
+        width: 100px;
+        opacity: 0.5;
+    }
+}
+
+.titulo-seccion:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
+                 0 0 25px rgba(255, 255, 255, 0.3),
+                 0 0 35px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Modo oscuro */
+body.dark-mode .titulo-seccion {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+                 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .titulo-seccion:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+                 0 0 25px rgba(255, 255, 255, 0.4),
+                 0 0 35px rgba(255, 255, 255, 0.3);
 }
 
 /* Estilo específico para la sección Inicio */
@@ -24,10 +84,11 @@
     font-weight: 700;
 }
 
-/* Estilo común para los títulos de sección principales (excepto inicio) */
+/* Estilo común para los títulos de sección principales */
 #sobremi .titulo-seccion,
 #skills .titulo-seccion,
-#portfolio .titulo-seccion {
+#portfolio .titulo-seccion,
+#proyectos .titulo-seccion {
     font-family: 'Syne', sans-serif;
     font-size: 36px;
     text-transform: uppercase;
@@ -48,77 +109,88 @@
 
 #sobremi .titulo-seccion::after,
 #skills .titulo-seccion::after,
-#portfolio .titulo-seccion::after {
+#portfolio .titulo-seccion::after,
+#proyectos .titulo-seccion::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 50px;
     height: 2px;
     background: linear-gradient(90deg, 
         transparent,
         var(--accent-color),
         #ff8ab3,
         transparent);
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulseLine 2s ease-in-out infinite;
 }
 
-#sobremi .titulo-seccion:hover::after,
-#skills .titulo-seccion:hover::after,
-#portfolio .titulo-seccion:hover::after {
-    transform: scaleX(1);
+/* Modo oscuro para secciones específicas */
+body.dark-mode #sobremi .titulo-seccion,
+body.dark-mode #skills .titulo-seccion,
+body.dark-mode #portfolio .titulo-seccion,
+body.dark-mode #proyectos .titulo-seccion {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+                 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
-#sobremi .titulo-seccion:hover,
-#skills .titulo-seccion:hover,
-#portfolio .titulo-seccion:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
-                 0 0 25px rgba(255, 255, 255, 0.3),
-                 0 0 35px rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+body.dark-mode #sobremi .titulo-seccion:hover,
+body.dark-mode #skills .titulo-seccion:hover,
+body.dark-mode #portfolio .titulo-seccion:hover,
+body.dark-mode #proyectos .titulo-seccion:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+                 0 0 25px rgba(255, 255, 255, 0.4),
+                 0 0 35px rgba(255, 255, 255, 0.3);
 }
 
 /* Estilo específico para la sección Contacto */
 #contacto .titulo-seccion {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 40px;
     position: relative;
     display: inline-block;
-    padding: 0 20px;
-    letter-spacing: 2px;
-    color: var(--text-color);
-}
-
-#contacto .titulo-seccion::before,
-#contacto .titulo-seccion::after {
-    content: '✉';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    color: var(--accent-color);
-    opacity: 0;
+    text-align: center;
+    width: 100%;
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-image: none !important;
+    background-position: initial !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+    background-attachment: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
 }
 
 #contacto .titulo-seccion::before {
-    left: 0;
+    display: none !important;
 }
 
 #contacto .titulo-seccion::after {
-    right: 0;
-}
-
-#contacto .titulo-seccion:hover::before {
-    left: -20px;
-    opacity: 1;
-}
-
-#contacto .titulo-seccion:hover::after {
-    right: -20px;
-    opacity: 1;
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent,
+        var(--accent-color),
+        #ff8ab3,
+        transparent);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulseLine 2s ease-in-out infinite;
 }
 
 /* Modo oscuro */
@@ -132,7 +204,8 @@ body.dark-mode #inicio .presentacion h2 span {
 
 body.dark-mode #sobremi .titulo-seccion,
 body.dark-mode #skills .titulo-seccion,
-body.dark-mode #portfolio .titulo-seccion {
+body.dark-mode #portfolio .titulo-seccion,
+body.dark-mode #proyectos .titulo-seccion {
     color: #ffffff !important;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
                  0 0 20px rgba(255, 255, 255, 0.3),
@@ -141,7 +214,8 @@ body.dark-mode #portfolio .titulo-seccion {
 
 body.dark-mode #sobremi .titulo-seccion:hover,
 body.dark-mode #skills .titulo-seccion:hover,
-body.dark-mode #portfolio .titulo-seccion:hover {
+body.dark-mode #portfolio .titulo-seccion:hover,
+body.dark-mode #proyectos .titulo-seccion:hover {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
                  0 0 25px rgba(255, 255, 255, 0.4),
                  0 0 35px rgba(255, 255, 255, 0.3);

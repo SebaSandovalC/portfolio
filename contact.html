@@ -42,8 +42,8 @@
                 <ul id="links">
                     <li><a href="index.html" onclick="seleccionar(this)">INICIO</a></li>
                     <li><a href="index.html#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
-                    <li><a href="index.html#skills" onclick="seleccionar(this)">SKILLS</a></li>
-                    <li><a href="index.html#portfolio" onclick="seleccionar(this)">PROYECTOS</a></li>
+                    <li><a href="index.html#stacks" onclick="seleccionar(this)">STACKS</a></li>
+                    <li><a href="index.html#proyectos" onclick="seleccionar(this)">PROYECTOS</a></li>
                     <li><a href="contact.html" onclick="seleccionar(this)" class="seleccionado">CONTACTO</a></li>
                 </ul>
             </nav>
@@ -51,9 +51,6 @@
                 <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
-            <button class="modo-btn" id="modoBtn" onclick="cambiarModo()">
-                <i class="fa-solid fa-moon"></i>
-            </button>
             <div id="icono-nav" onclick="responsiveMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -63,20 +60,34 @@
     <!-- Sección Contacto -->
     <section id="contacto">
         <div class="contenido-seccion">
-            <h2 class="titulo-seccion">Conectemos</h2>
+            <h2 id="titulo-contacto" class="titulo-unico">Contacto</h2>
             <div class="contenedor-form">
+                <h3>¿Listo para trabajar juntos?</h3>
+                <p class="mensaje-intro">Estaré encantado de escuchar sobre tu proyecto. Completa el formulario a continuación y me pondré en contacto contigo lo antes posible.</p>
                 <form action="https://formspree.io/f/xjvnqjqg" method="POST">
                     <div class="fila mitad">
-                        <input type="text" placeholder="Nombre" class="input-mitad" name="nombre" required>
-                        <input type="email" placeholder="Email" class="input-mitad" name="email" required>
+                        <div class="campo">
+                            <input type="text" placeholder=" " class="input-mitad" name="nombre" id="nombre" required>
+                            <label for="nombre">Nombre</label>
+                        </div>
+                        <div class="campo">
+                            <input type="email" placeholder=" " class="input-mitad" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
                     </div>
                     <div class="fila">
-                        <input type="text" placeholder="Asunto" class="input-full" name="asunto" required>
+                        <div class="campo">
+                            <input type="text" placeholder=" " class="input-full" name="asunto" id="asunto" required>
+                            <label for="asunto">Asunto</label>
+                        </div>
                     </div>
                     <div class="fila">
-                        <textarea name="mensaje" id="" cols="30" rows="7" placeholder="Tu Mensaje" class="input-full" required></textarea>
+                        <div class="campo">
+                            <textarea name="mensaje" id="mensaje" cols="30" rows="7" placeholder=" " class="input-full" required></textarea>
+                            <label for="mensaje">Tu Mensaje</label>
+                        </div>
                     </div>
-                    <input type="submit" value="Enviar" class="btn-enviar">
+                    <button type="submit" class="btn-enviar">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
@@ -92,5 +103,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html> 

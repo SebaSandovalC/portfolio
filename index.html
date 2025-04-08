@@ -33,69 +33,67 @@
     <div class="background-overlay"></div>
 
     <!-- Header -->
-    <header>
+      <header>
         <div class="contenido-header">
             <a href="#inicio" class="logo-link">
-                <h1><i class="fa-solid fa-code"></i></h1>
+            <h1><i class="fa-solid fa-code"></i></h1>
             </a>
             <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" class="seleccionado">INICIO</a></li>
-                    <li><a href="#sobremi">SOBRE MÍ</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="contact.html">CONTACTO</a></li>
+                <ul id="links">
+                    <li><a href="#inicio" onclick="seleccionar(this)">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                    <li><a href="#stacks" onclick="seleccionar(this)">STACKS</a></li>
+                    <li><a href="#proyectos" onclick="seleccionar(this)">PROYECTOS</a></li>
+                    <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
                 </ul>
             </nav>
             <div class="redes">
                 <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
-            <button class="modo-btn" id="modoBtn" onclick="cambiarModo()">
-                <i class="fa-solid fa-moon"></i>
-            </button>
             <div id="icono-nav" onclick="responsiveMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
-        </div>
-    </header>
+        </div>      
+      </header>
 
     <!-- SECCION INICIO -->
     <section id="inicio">
         <div class="contenido">
-            <div class="presentacion">
-                <p class="bienvenida">Bienvenidos</p>
-                <h2>SOY <span>SEBASTIÁN SANDOVAL</span>, DESARROLLADOR FULL STACK JAVA TRAINEE | ESPECIALISTA TI</h2>
-                <p class="descripcion">Profesional con experiencia destacada en Tecnologías de la Información (TI).</p>
-                <a href="#portfolio" class="btn-dinamico"><i class="fa-solid fa-briefcase"></i> Ir a Portafolio</a>
-            </div>
-        </div>
-    </section>
+      <div class="presentacion">
+        <p class="bienvenida">Bienvenidos</p>
+        <h2>SOY <span>SEBASTIÁN SANDOVAL</span>, DESARROLLADOR FULL STACK JAVA TRAINEE | ESPECIALISTA TI</h2>
+        <p class="descripcion">Profesional con experiencia destacada en Tecnologías de la Información (TI).</p>
+        <a href="#portfolio" class="btn-dinamico"><i class="fa-solid fa-briefcase"></i> Ir a Portafolio</a>
+      </div>
+    </div>
+  </section>
   
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi">
+  <!-- SECCION SOBRE MI -->
+  <section id="sobremi">
         <div class="contenido-seccion">
             <h2 class="titulo-seccion">SOBRE MI</h2>
             <div class="fila">
                 <div class="col">
-                    <div class="contenedor-foto">
+    <div class="contenedor-foto">
                         <img src="IMG/seba.webp" alt="Fotografía de Sebastián Sandoval">
                     </div>
-                </div>
+    </div>
                 <div class="col">
-                    <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
+        <p>Mi carrera se ha centrado en la gestión de sistemas operativos, administración de plataformas como Office365 y Azure. Mi formación incluye estudios en Desarrollador Full Stack JAVA TRAINEE y Análisis de Sistemas, respaldados por certificaciones en Inteligencia Artificial con Azure y Ciberseguridad Industrial. Me destaco por mi enfoque en la resolución de problemas y la mejora continua, con habilidades sólidas en desarrollo personal y comunicación efectiva.</p>
                     <br>
                     <p>Para más información, haz click en Curriculum Vitae.</p>
                 </br>
-                    <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
+        <a href="./CV.pdf" class="btn-dinamico" target="_blank"><i class="fa-solid fa-file-pdf"></i> Curriculum Vitae</a>
                 </div>
             </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SECCION STACKS TECNOLÓGICOS -->
-    <section id="skills">
-        <h3 class="titulo-seccion">Skills</h3>
+<!-- SECCION STACKS TECNOLÓGICOS -->
+<section id="stacks">
+    <div class="contenido-seccion">
+        <h2 class="titulo-seccion">Stacks</h2>
         <div class="contenedor-skills">
             <div class="skill-item">
                 <i class="fa-brands fa-html5"></i>
@@ -122,46 +120,95 @@
                 <p>MySQL</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SECCION PORTAFOLIO -->
-    <section id="portfolio">
-        <h3 class="titulo-seccion">Proyectos Personales</h3>
-        <div class="fila">
-            <div class="proyecto">
-                <div class="overlay"></div>
+<!-- SECCION PORTAFOLIO -->
+<section id="proyectos">
+    <div class="contenido-seccion">
+        <h2 class="titulo-seccion">Proyectos</h2>
+        <div class="contenedor-proyectos">
+        <div class="proyecto">
                 <img src="IMG/proyectoikki.webp" alt="Proyecto Ikki">
-                <div class="info">
-                    <h4>IKKITOUCH - ILUSTRADOR</h4>
+            <div class="info">
+                    <h3>IKKITOUCH - ILUSTRADOR</h3>
                     <p>Desarrollo Web</p>
                     <div class="tecnologias">
                         <div class="tecnologia">
                             <i class="fa-brands fa-html5"></i>
                             <span>HTML5</span>
-                        </div>
+            </div>
                         <div class="tecnologia">
                             <i class="fa-brands fa-css3-alt"></i>
                             <span>CSS3</span>
-                        </div>
+        </div>
                         <div class="tecnologia">
                             <i class="fa-brands fa-js"></i>
                             <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+                    <div class="enlaces">
+                        <a href="#" class="enlace">
+                            <i class="fa-solid fa-link"></i>
+                            <span>Ver Proyecto</span>
+                        </a>
+                        <a href="https://github.com/SebaSandovalC/PaginaWebIKKITOUCH" class="enlace" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Código</span>
+                        </a>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCION CONTACTO -->
+<section id="contacto">
+    <div class="contenido-seccion">
+        <h2 id="titulo-contacto" class="titulo-unico">Contacto</h2>
+        <div class="contenedor-form">
+            <h3>¿Listo para trabajar juntos?</h3>
+            <p class="mensaje-intro">Completa el formulario y me pondré en contacto contigo lo antes posible.</p>
+            <form action="https://formspree.io/f/xjvnqjqg" method="POST">
+                <div class="fila mitad">
+                    <div class="campo">
+                        <input type="text" placeholder=" " class="input-mitad" name="nombre" id="nombre" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="campo">
+                        <input type="email" placeholder=" " class="input-mitad" name="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="campo">
+                        <input type="text" placeholder=" " class="input-full" name="asunto" id="asunto" required>
+                        <label for="asunto">Asunto</label>
+                    </div>
+                </div>
+                <div class="fila">
+                    <div class="campo">
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="5" placeholder=" " class="input-full" required></textarea>
+                        <label for="mensaje">Tu Mensaje</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
-    <footer>
-        <div class="redes">
+<footer>
+    <div class="redes">
             <a href="https://www.linkedin.com/in/sebasandovalc/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/SebaSandovalC" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
+    </div>
         <p>Todos los derechos reservados - 2025.</p>
-    </footer>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
