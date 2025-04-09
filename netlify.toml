@@ -1,0 +1,10 @@
+# Netlify configuration file
+
+[build]
+  # Assuming this is a static site with no build command needed.
+  # If you have a build step, specify the command here.
+  # command = "npm run build"
+
+  # Specify the directory containing the built site files.
+  # For a simple static site, this is often the root directory.
+  publish = "."
